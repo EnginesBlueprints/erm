@@ -16,7 +16,7 @@
         "patch": 0
       }
     },
-    "timestamp": "2019-04-26T17:34:50+10:00"
+    "timestamp": "2019-04-26T18:34:46+10:00"
   },
   "software": {
     "base": {
@@ -76,13 +76,14 @@
         }
       }
     ],
-    "framework_specific": {
-      "rake_tasks": [
-        {
-          "action": "client:build",
-          "always_run": true
+    "actionators": [
+      {
+        "name": "client_build",
+        "return_type": "plain_text",
+        "script": {
+          "content": "#!/bin/sh\r\nbundle exec rake client:build"
         }
-      ]
-    }
+      }
+    ]
   }
 }
