@@ -16,7 +16,7 @@
         "patch": 0
       }
     },
-    "timestamp": "2019-04-26T18:58:14+10:00"
+    "timestamp": "2019-04-26T19:24:39+10:00"
   },
   "software": {
     "base": {
@@ -33,7 +33,7 @@
     "scripts": {
       "start": {
         "language": "sh",
-        "content": "#!/bin/sh\r\n\r\ncd /home/app\r\ngit pull\r\nbundle  --standalone\r\nbundle exec rake client:build\r\n\r\nbundle exec thin  -R /home/config.ru -p 8000 start &"
+        "content": "#!/bin/sh\r\nPID_FILE=/var/run/engines/erm.pid\r\n. /home/engines/functions/trap.sh\r\n\r\nexport PID_FILE\r\ncd /home/app\r\ngit pull\r\nbundle  --standalone\r\n#bundle exec rake client:build\r\n\r\nbundle exec thin  -R /home/config.ru -p 8000 start &\r\necho $! > $PID_FILE\r\nstartup_complete\r\n\r\nwait\r\nshutdown_complete\r\n\r\n\r\n"
       }
     },
     "installed_packages": [
