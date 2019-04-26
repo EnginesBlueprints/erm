@@ -16,7 +16,7 @@
         "patch": 0
       }
     },
-    "timestamp": "2019-04-26T18:34:46+10:00"
+    "timestamp": "2019-04-26T18:36:53+10:00"
   },
   "software": {
     "base": {
@@ -44,6 +44,20 @@
         "destination": "./",
         "extraction_command": "git",
         "path_to_extracted": "erm"
+      }
+    ],
+    "service_configurations": [
+      {
+        "publisher_namespace": "EnginesSystem",
+        "type_path": "filesystem/local/filesystem",
+        "variables": {
+          "service_name": "_Engines_Builder(engine_name)",
+          "volume_src": "",
+          "engine_path": "/home/fs",
+          "permissions": "rw",
+          "user": "_Engines_Builder(data_uid)",
+          "group": "_Engines_Builder(data_gid)"
+        }
       }
     ],
     "environment_variables": [
