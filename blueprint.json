@@ -15,12 +15,74 @@
         "level": "alpha",
         "patch": 0
       }
-    }
+    },
+    "timestamp": "2019-04-26T17:32:48+10:00"
   },
   "software": {
     "base": {
+      "name": "erm",
+      "framework": "sinatra",
       "deployment_type": "web",
-      "http_protocol": "https_and_http"
+      "http_protocol": "https_only",
+      "continuous_deployment": true,
+      "memory": {
+        "required": 128,
+        "recommended": 256
+      }
+    },
+    "scripts": {
+      "start": {
+        "language": "sh",
+        "content": "#!/bin/sh\r\n\r\ncd /home/app\r\ngit pull\r\nbundle exec --standalone\r\nbundle exec rake client:build"
+      }
+    },
+    "installed_packages": [
+      {
+        "name": "erm",
+        "download_type": "git",
+        "source_url": "https://github.com/lachdoug/erm",
+        "destination": "./",
+        "extraction_command": "git",
+        "path_to_extracted": "erm"
+      }
+    ],
+    "environment_variables": [
+      {
+        "name": "ERM_OAUTH_URL",
+        "ask_at_build_time": true,
+        "input": {
+          "type": "boolean"
+        }
+      },
+      {
+        "name": "ERM_OAUTH_CLIENT_ID",
+        "ask_at_build_time": true,
+        "input": {
+          "type": "boolean"
+        }
+      },
+      {
+        "name": "ERM_OAUTH_SECRET",
+        "ask_at_build_time": true,
+        "input": {
+          "type": "boolean"
+        }
+      },
+      {
+        "name": "ERM_FS_DIR",
+        "value": "/home/fs",
+        "input": {
+          "type": "boolean"
+        }
+      }
+    ],
+    "framework_specific": {
+      "rake_tasks": [
+        {
+          "action": "client:build",
+          "always_run": true
+        }
+      ]
     }
   }
 }
