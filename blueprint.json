@@ -16,7 +16,7 @@
         "patch": 0
       }
     },
-    "timestamp": "2019-04-26T17:32:48+10:00"
+    "timestamp": "2019-04-26T17:34:50+10:00"
   },
   "software": {
     "base": {
@@ -51,28 +51,28 @@
         "name": "ERM_OAUTH_URL",
         "ask_at_build_time": true,
         "input": {
-          "type": "boolean"
+          "type": "string"
         }
       },
       {
         "name": "ERM_OAUTH_CLIENT_ID",
         "ask_at_build_time": true,
         "input": {
-          "type": "boolean"
+          "type": "string"
         }
       },
       {
         "name": "ERM_OAUTH_SECRET",
         "ask_at_build_time": true,
         "input": {
-          "type": "boolean"
+          "type": "string"
         }
       },
       {
         "name": "ERM_FS_DIR",
         "value": "/home/fs",
         "input": {
-          "type": "boolean"
+          "type": "string"
         }
       }
     ],
