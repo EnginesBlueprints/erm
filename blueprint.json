@@ -16,7 +16,7 @@
         "patch": 0
       }
     },
-    "timestamp": "2019-04-26T19:28:29+10:00"
+    "timestamp": "2019-04-28T18:29:52+10:00"
   },
   "software": {
     "base": {
@@ -38,12 +38,26 @@
     },
     "installed_packages": [
       {
-        "name": "erm",
+        "name": "eq8r_resources",
         "download_type": "git",
-        "source_url": "https://github.com/lachdoug/erm",
-        "destination": "./",
+        "source_url": "https://gitea.eq8r.com/doug/eq8r_resources",
+        "destination": "/home/app/data",
         "extraction_command": "git",
-        "path_to_extracted": "erm"
+        "path_to_extracted": "eq8r_resources"
+      }
+    ],
+    "service_configurations": [
+      {
+        "publisher_namespace": "EnginesSystem",
+        "type_path": "filesystem/local/filesystem",
+        "variables": {
+          "service_name": "data",
+          "volume_src": "",
+          "engine_path": "",
+          "permissions": "rw",
+          "user": "_Engines_Builder(data_uid)",
+          "group": "_Engines_Builder(data_gid)"
+        }
       }
     ],
     "environment_variables": [
@@ -80,6 +94,12 @@
       {
         "path": "/home/app",
         "recursive": true
+      }
+    ],
+    "persistent_directories": [
+      {
+        "path": "/home/app/data",
+        "volume_name": "data"
       }
     ],
     "actionators": [
