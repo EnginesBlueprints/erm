@@ -16,7 +16,7 @@
         "patch": 0
       }
     },
-    "timestamp": "2019-04-28T18:34:31+10:00"
+    "timestamp": "2019-04-28T18:37:46+10:00"
   },
   "software": {
     "base": {
@@ -47,6 +47,7 @@
       {
         "name": "eq8r_resources",
         "download_type": "git",
+        "command_options": " -c http.sslVerify=false ",
         "source_url": "https://gitea.eq8r.com/doug/eq8r_resources",
         "destination": "/home/app/data",
         "path_to_extracted": "eq8r_resources"
