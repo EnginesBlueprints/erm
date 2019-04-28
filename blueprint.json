@@ -16,7 +16,7 @@
         "patch": 0
       }
     },
-    "timestamp": "2019-04-28T18:29:52+10:00"
+    "timestamp": "2019-04-28T18:34:31+10:00"
   },
   "software": {
     "base": {
@@ -38,11 +38,17 @@
     },
     "installed_packages": [
       {
+        "name": "erm",
+        "download_type": "git",
+        "source_url": "https://github.com/lachdoug/erm",
+        "destination": "/home/app",
+        "path_to_extracted": "erm"
+      },
+      {
         "name": "eq8r_resources",
         "download_type": "git",
         "source_url": "https://gitea.eq8r.com/doug/eq8r_resources",
         "destination": "/home/app/data",
-        "extraction_command": "git",
         "path_to_extracted": "eq8r_resources"
       }
     ],
