@@ -16,7 +16,7 @@
         "patch": 0
       }
     },
-    "timestamp": "2019-04-28T18:37:46+10:00"
+    "timestamp": "2019-04-29T09:38:13+10:00"
   },
   "software": {
     "base": {
@@ -94,6 +94,13 @@
         "value": "/home/fs",
         "input": {
           "type": "string"
+        }
+      },
+      {
+        "name": "ERM_TEMPLATE_PARAMS_YAML",
+        "ask_at_build_time": true,
+        "input": {
+          "type": "text"
         }
       }
     ],
