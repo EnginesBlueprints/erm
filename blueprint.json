@@ -16,7 +16,7 @@
         "patch": 0
       }
     },
-    "timestamp": "2019-04-29T14:22:25+10:00"
+    "timestamp": "2019-05-17T14:26:15+10:00"
   },
   "software": {
     "base": {
@@ -63,7 +63,8 @@
           "engine_path": "",
           "permissions": "rw",
           "user": "_Engines_Builder(data_uid)",
-          "group": "_Engines_Builder(data_gid)"
+          "group": "_Engines_Builder(data_gid)",
+          "fw_user": "_Engines_Builder(cont_user_id)"
         }
       }
     ],
@@ -90,17 +91,26 @@
         }
       },
       {
-        "name": "ERM_FS_DIR",
-        "value": "/home/fs",
-        "input": {
-          "type": "string"
-        }
-      },
-      {
         "name": "ERM_TEMPLATE_PARAMS_YAML",
         "ask_at_build_time": true,
         "input": {
           "type": "text"
+        }
+      },
+      {
+        "name": "ERM_USER_INACTIVITY_TIMEOUT",
+        "value": "30",
+        "input": {
+          "type": "integer"
+        }
+      },
+      {
+        "name": "ERM_USER_TOKEN",
+        "value": "_Engines_System(Random(32))",
+        "mandatory": true,
+        "immutable": true,
+        "input": {
+          "type": "string"
         }
       }
     ],
