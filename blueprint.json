@@ -16,7 +16,7 @@
         "patch": 0
       }
     },
-    "timestamp": "2019-05-17T14:26:15+10:00"
+    "timestamp": "2019-05-17T16:51:49+10:00"
   },
   "software": {
     "base": {
@@ -100,13 +100,14 @@
       {
         "name": "ERM_USER_INACTIVITY_TIMEOUT",
         "value": "30",
+        "ask_at_build_time": true,
         "input": {
           "type": "integer"
         }
       },
       {
         "name": "ERM_USER_TOKEN",
-        "value": "_Engines_System(Random(32))",
+        "value": "_Engines_System(random(32))",
         "mandatory": true,
         "immutable": true,
         "input": {
